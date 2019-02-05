@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX book template                           %%
+%% Author:  Amber Jain (http://amberj.devio.us/) %%
+%% License: ISC license                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,11pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 'dedication' environment: To add a dedication paragraph at the start of book %
+% Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.66\textwidth}
+   \raggedright
+}
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter quote at the start of chapter        %
+% Source: http://tex.stackexchange.com/a/53380 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First page of book which contains 'stuff' like: %
+%  - Book title, subtitle                         %
+%  - Book author name                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Book's title and subtitle
+\title{\Huge \textbf{Electric Circuits}  \\ \huge An Introduction}
+% Author
+\author{Robert Brown \\ Darby Hewitt}
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add a dedication paragraph to dedicate your book to someone %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{dedication}
+Dedicated to some cool people.
+\end{dedication}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\mainmatter
+\chapter*{Preface}
+\input{preface}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Give credit where credit is due. %
+% Say thanks!                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgements}
+\begin{itemize}
+\item To Robert and Darby, who are awesome!
+\item To the students, who are awesome!
+\item To circuits, which is awesome!
+\end{itemize}
+
+% ---------------------------------------------------------------------
+\chapter{Underlying Fundamentals}
+\section{Review of Algebra}
+\input{ch_prelim/algebra}
+
+\section{Units}
+\subsection{What is charge?}
+\subsection{Current, Voltage, Resistance}
+
+\section{A Word on Graphs}
+\input{ch_prelim/graph_theory}
+
+\section{What is a Circuit?}
+
+\section{Vector Mathematics}
+\input{ch_prelim/vector_math}
+
+\section{Complex Numbers}
+\input{ch_prelim/complex_numbers}
+
+\section{Linear Algebra}
+\input{ch_prelim/linear_algebra}
+
+\section{Computer Resources - Matlab}
+\subsection{Setting up Matlab/Octave}
+\subsection{Using Matlab to Solve Problems}
+\section{Computer Resources - Python}
+\subsection{Setting up Python}
+\subsection{Using Python to Solve Problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{DC Circuit Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------------------------
+\chapter{The First Laws}
+
+\section{Ohm's Law on a Single Resistor}
+
+\section{Ohm's Law on a Simple Circuit}
+
+\section{Kirchoff's Current Law}
+
+\section{Watt's Law}
+
+% --------------------------------------------------------------------
+\chapter{Circuit Simplification and Re-Expansion}
+\section{Resistors in Series}
+\section{Resistors in Paralle}
+\section{Reorganizing Complex Circuits}
+\section{Using Voltage Division}
+\section{Using Current Division}
+
+% --------------------------------------------------------------------
+\chapter{Extra Uses for Voltage Dividers}
+\section{Maximum Power Transfer}
+
+\section{Nonlinear Circuit Elements}
+
+% --------------------------------------------------------------------
+\chapter{Operational Amplifiers}
+\section{What is an Op-Amp?}
+
+\section{Golden Rules}
+
+\section{Analyzing Circuits with Op-Amps}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Alternating Current}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------------------------
+\chapter{AC Circuits}
+\section{Phasor Notation}
+\section{Capacitors}
+\section{Inductors}
+\section{Impedance and Ohm's Law}
+
+
+% --------------------------------------------------------------------
+\chapter{Passive Filters}
+\section{Frequency Response}
+\section{First Order Filters}
+\section{Second Order Filters}
+
+% --------------------------------------------------------------------
+\chapter{Active Filters}
+\section{Op-Amps in AC}
+\section{First Order Filters}
+\section{Second Order Filters}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{Analysis of Complex Circuits}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------------------
+\chapter{Node Voltage Method}
+
+\chapter{Mesh Current Method}
+
+
+\end{document}
