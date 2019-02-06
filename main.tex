@@ -11,7 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{hyperref}
+\usepackage[hidelinks, pdftoolbar=false, pdfpagelayout=TwoPageRight]{hyperref} % Create links without any boxes
 \usepackage{graphicx}
 \usepackage[english]{babel}
 
@@ -47,60 +47,47 @@
   {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
 \makeatother
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First page of book which contains 'stuff' like: %
-%  - Book title, subtitle                         %
-%  - Book author name                             %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Book's title and subtitle
 \title{\Huge \textbf{Electric Circuits}  \\ \huge An Introduction}
 % Author
 \author{Robert Brown \\ Darby Hewitt}
 
+% ====================================================================
+% ====================================================================
 
 \begin{document}
 
 \frontmatter
 \maketitle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Add a dedication paragraph to dedicate your book to someone %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{dedication}
-Dedicated to some cool people.
-\end{dedication}
+%\begin{dedication}
+%Dedicated to some cool people.
+%\end{dedication}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Auto-generated table of contents, list of figures and list of tables %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 %\listoffigures
 %\listoftables
 
 \mainmatter
+
+%\section*{Acknowledgements}
+%\begin{itemize}
+%\item To Robert and Darby, who are awesome!
+%\item To the students, who are awesome!
+%\item To circuits, which is awesome!
+%\end{itemize}
+
 \chapter*{Preface}
 \input{preface}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Give credit where credit is due. %
-% Say thanks!                      %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Acknowledgements}
-\begin{itemize}
-\item To Robert and Darby, who are awesome!
-\item To the students, who are awesome!
-\item To circuits, which is awesome!
-\end{itemize}
 
 % ---------------------------------------------------------------------
 \chapter{Underlying Fundamentals}
 \section{Review of Algebra}
 \input{ch_prelim/algebra}
 
-\section{Units}
-\subsection{What is charge?}
-\subsection{Current, Voltage, Resistance}
-
+\section{Units} \label{sec:PrelimUnits}
+\input{ch_prelim/units}
 \section{A Word on Graphs}
 \input{ch_prelim/graph_theory}
 
@@ -116,11 +103,11 @@ Dedicated to some cool people.
 \input{ch_prelim/linear_algebra}
 
 \section{Computer Resources - Matlab}
-\subsection{Setting up Matlab/Octave}
-\subsection{Using Matlab to Solve Problems}
+\subsection*{Setting up Matlab/Octave}
+\subsection*{Using Matlab to Solve Problems}
 \section{Computer Resources - Python}
-\subsection{Setting up Python}
-\subsection{Using Python to Solve Problems}
+\subsection*{Setting up Python}
+\subsection*{Using Python to Solve Problems}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{DC Circuit Analysis}
@@ -130,27 +117,38 @@ Dedicated to some cool people.
 \chapter{The First Laws}
 
 \section{Ohm's Law on a Single Resistor}
-
-\section{Ohm's Law on a Simple Circuit}
+\input{ch_firstlaws/ohms_law}
+\section{Ohm's Law on a Simple Circuit} \label{sec:FL_simpleCircuit}
 
 \section{Kirchoff's Current Law}
 
 \section{Watt's Law}
 
+\section{Incorporating Computation - Plotting}
 % --------------------------------------------------------------------
-\chapter{Circuit Simplification and Re-Expansion}
+\chapter{Equivalent Circuits}
+\input{ch_eqCircuits/intro}
 \section{Resistors in Series}
-\section{Resistors in Paralle}
-\section{Reorganizing Complex Circuits}
+\input{ch_eqCircuits/series}
+\section{Resistors in Parallel}
+\input{ch_eqCircuits/parallel}
+\section{Reorganizing Complicated Circuits}
+\input{ch_eqCircuits/complicated}
 \section{Using Voltage Division}
+\input{ch_eqCircuits/voltageDivision}
 \section{Using Current Division}
+\input{ch_eqCircuits/currentDivision}
+\section{Circuit Shorthand}
+\input{ch_eqCircuits/shorthand}
+\section{Incorporating Computation - $R_1||R_2$ Function}
+\input{ch_eqCircuits/computation}
 
 % --------------------------------------------------------------------
 \chapter{Extra Uses for Voltage Dividers}
 \section{Maximum Power Transfer}
 
 \section{Nonlinear Circuit Elements}
-
+\section{Incorporating Computation - Graphical Analysis}
 % --------------------------------------------------------------------
 \chapter{Operational Amplifiers}
 \section{What is an Op-Amp?}
@@ -169,8 +167,9 @@ Dedicated to some cool people.
 \section{Capacitors}
 \section{Inductors}
 \section{Impedance and Ohm's Law}
-
-
+\section{Watt's Law for AC}
+\subsection*{Maximum Power for AC Circuits}
+\subsection*{Impedance Matching}
 % --------------------------------------------------------------------
 \chapter{Passive Filters}
 \section{Frequency Response}
@@ -184,12 +183,30 @@ Dedicated to some cool people.
 \section{Second Order Filters}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\part{Analysis of Complex Circuits}
+\part{Analysis of Circuit Networks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % --------------------------------------------------------------------
+\chapter{Superposition}
+
+% --------------------------------------------------------------------
 \chapter{Node Voltage Method}
-
+\section{Kirchoff's Current Law Revisited}
+\section{Using the Node Voltage Method}
+\subsection*{Writing KCL}
+\subsection*{Converting to Voltage with Ohm's Law}
+\subsection*{Dealing with Voltage Sources}
+\subsection*{Dealing with Dependent Sources}
+\section{Incorporating Computation - Linear Algebra}
+% --------------------------------------------------------------------
 \chapter{Mesh Current Method}
-
+\section{Mesh Currents vs. Branch Currents}
+\section{Kirchoff's Voltage Law}
+\section{Incorporating Computation - Linear Algebra}
+%--------------------------------------------------------------------
+\chapter{Thevenin and Norton Equivalent Circuits}
+\section{Circuit Loads}
+\section{Determining Thevenin Resistance}
+\section{Determining Thevenin Voltage}
+\section{Determining Norton Current}
 
 \end{document}
