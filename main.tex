@@ -8,6 +8,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage[bottom]{footmisc}
+\usepackage{ctable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +37,8 @@
    \vspace*{\stretch{3}}
    \clearpage
 }
-
+%\renewcommand{\arraystretch}{1.1}
+\newcolumntype{V}{>{\centering\arraybackslash} m{0.25\linewidth} }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter quote at the start of chapter        %
 % Source: http://tex.stackexchange.com/a/53380 %
@@ -166,13 +169,22 @@
 
 % --------------------------------------------------------------------
 \chapter{AC Circuits}
+\input{ch_ACCircuits/alternatingCurrent}
 \section{Phasor Notation}
+\input{ch_ACCircuits/phasors}
 \section{Capacitors}
+\input{ch_ACCircuits/capacitors}
 \section{Inductors}
-\section{Impedance and Ohm's Law}
+\input{ch_ACCircuits/inductors}
+\section{Equivalent Impedance and Ohm's Law}
+\input{ch_ACCircuits/impedance}
 \section{Watt's Law for AC}
+\input{ch_ACCircuits/ACwatt}
 \subsection*{Maximum Power for AC Circuits}
+%\input{ch_ACCircuits/ACmaxpower}
 \subsection*{Impedance Matching}
+%\input{ch_ACCircuits/impedancematching}
+
 % --------------------------------------------------------------------
 \chapter{Passive Filters}
 \section{Frequency Response}
