@@ -1,0 +1,45 @@
+The first thing to note is that linear algebra is a huge subject with applications not only in circuit analysis, but also in artificial intelligence, simulation and modeling, signal analysis, and computer graphics, just to name a few.  We will only be scratching the surface by covering matrix/vector algebra and matrix inversion.
+\subsection*{What is a Matrix?}
+A matrix is simply a collection of numbers in an array of a specific size.
+For instance, a 2x3 matrix could be written as follows:
+\begin{equation*}
+  A = \left[
+    \begin{tabular}{ccc}
+      2 & 1 & -4 \\
+      $\pi$ & $2/9$ & 14
+    \end{tabular}
+    \right]
+\end{equation*}
+Note that the first number in the size refers to the width or the number of columns of the matrix.  The second refers to the height or the number of rows.
+
+Vectors, by contrast, will always have one of their dimensions that has a length of 1.  A {\bf row vector} would have a size of Nx1, while a {\bf column vector} would have a size of 1xN.
+\begin{align*}
+  x_{row} =& \left\{\begin{tabular}{ccc} 20 & $\sqrt{2}$ & 0.2 \end{tabular}\right\} &
+  x_{col} =& \left\{\begin{tabular}{c} 5 \\ $e^2$ \\ 2 \end{tabular}\right\}
+\end{align*}
+
+A {\bf scalar} is a normal number that we are used to working with.  It could be defined as a matrix with a size of 1x1.
+
+\subsection*{Matrix/Vector Algebra}
+%% Addition/Subtraction
+Once we have some matrices and vectors defined, we can start performing some mathematical operations on them.  First, we have addition/subtraction.  The most important thing to note is that the matrices we use MUST have the same size for us to add or subtract them.  
+
+%% Transpose
+Since matrices and vectors have some size and shape to them, we have the ability to move around the numbers inside them.  The operator that does this is known as the {\bf transpose} operator.  Transposing the matrix $A$ from before results in:
+\begin{equation*}
+  A^T = \left[
+    \begin{tabular}{cc}
+      2 & $\pi$ \\
+      1& $2/9$ \\
+      -4 & 14
+    \end{tabular}
+    \right]
+\end{equation*}
+Looking at each column, the values come from the original rows.
+
+%% Matrix Vector Multiplication
+Multiplication is a bit trickier.  In order to multiply two matrices, the number of rows of the first matrix must match the number of columns for the second matrix.  Also, some of the normal rules of scalar multiplication ($a b = b a$) are slightly modified ($A B = B^T A$)
+
+\subsection*{Writing Systems of Equations Using Linear Algebra}
+
+\subsection*{Matrix Inversion}

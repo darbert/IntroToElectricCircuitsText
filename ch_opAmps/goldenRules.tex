@@ -1,0 +1,7 @@
+\subsection*{Input Current is Zero ($i_+=i_-=0$)}
+Looking back at our simple model of the Op-Amp, this stems from our assumption that $R_{in}$ is very large.  Lets assume that the input voltage is in a normal range (something like 5-20 V) and that $R_{in}$ is about 1 G$\Omega$.  In that case, the current through the resistor looks something like
+\begin{equation*}
+  i_{in}=V_{in}/R_{in}=20 \text{V} / 1\text{G}\Omega = 20 \text{nA}.
+\end{equation*}
+  That is, admittedly, not zero.  However, if we try to account for that error in a normal circuit (one in which the current is measured in mA), the error we get from neglecting it is on the order of 0.01\%.
+\subsection*{ Voltage is Equivalent if Feedback is Present ($V_-=V_+$)}

@@ -8,6 +8,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage[bottom]{footmisc}
+\usepackage{circuitikz}
+\usepackage{ctable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,7 +20,7 @@
 \usepackage[hidelinks, pdftoolbar=false, pdfpagelayout=TwoPageRight]{hyperref} 
 \usepackage{graphicx}
 \usepackage[english]{babel}
-
+\usepackage{amsmath}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 'dedication' environment: To add a dedication paragraph at the start of book %
 % Source: http://www.tug.org/pipermail/texhax/2010-June/015184.html            %
@@ -35,7 +38,8 @@
    \vspace*{\stretch{3}}
    \clearpage
 }
-
+%\renewcommand{\arraystretch}{1.1}
+\newcolumntype{V}{>{\centering\arraybackslash} m{0.25\linewidth} }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter quote at the start of chapter        %
 % Source: http://tex.stackexchange.com/a/53380 %
@@ -95,6 +99,7 @@
 \input{ch_prelim/graph_theory}
 
 \section{What is a Circuit?}
+\input{ch_prelim/circuit.tex}
 
 \section{Vector Mathematics}
 \input{ch_prelim/vector_math}
@@ -135,8 +140,14 @@
 \input{ch_eqCircuits/series}
 \section{Resistors in Parallel}
 \input{ch_eqCircuits/parallel}
-\section{Reorganizing Complicated Circuits}
-\input{ch_eqCircuits/complicated}
+
+%% I'm in favor of omitting this section in favor of emphasizing the
+%%  definitions of parallel and series
+%\section{Reorganizing Complicated Circuits}
+%\input{ch_eqCircuits/complicated}
+
+\section{Wye-Delta Transform}
+\input{ch_eqCircuits/wyeDelta}
 \section{Using Voltage Division}
 \input{ch_eqCircuits/voltageDivision}
 \section{Using Current Division}
@@ -149,14 +160,15 @@
 % --------------------------------------------------------------------
 \chapter{Extra Uses for Voltage Dividers}
 \section{Maximum Power Transfer}
-
+\input{ch_voltageDividers/maxPower}
 \section{Nonlinear Circuit Elements}
 \section{Incorporating Computation - Graphical Analysis}
 % --------------------------------------------------------------------
 \chapter{Operational Amplifiers}
 \section{What is an Op-Amp?}
-
+\input{ch_opAmps/opAmp}
 \section{Golden Rules}
+\input{ch_opAmps/goldenRules}
 
 \section{Analyzing Circuits with Op-Amps}
 
@@ -166,24 +178,44 @@
 
 % --------------------------------------------------------------------
 \chapter{AC Circuits}
+\input{ch_ACCircuits/alternatingCurrent}
 \section{Phasor Notation}
+\input{ch_ACCircuits/phasors}
 \section{Capacitors}
+\input{ch_ACCircuits/capacitors}
 \section{Inductors}
-\section{Impedance and Ohm's Law}
+\input{ch_ACCircuits/inductors}
+\section{Equivalent Impedance and Ohm's Law}
+\input{ch_ACCircuits/impedance}
+% --------------------------------------------------------------------
+\chapter{AC Power}
 \section{Watt's Law for AC}
-\subsection*{Maximum Power for AC Circuits}
-\subsection*{Impedance Matching}
+\input{ch_ACPower/ACwatt}
+\section{Average Power}
+\input{ch_ACPower/averagePower}
+\section{Complex Power}
+\input{ch_ACPower/complexPower}
+\section{Power Factor Correction}
+\input{ch_ACPower/powerFactorCorrection}
+\section{Maximum Power for AC Circuits}
+\input{ch_ACPower/ACmaxPower}
 % --------------------------------------------------------------------
 \chapter{Passive Filters}
 \section{Frequency Response}
-\section{First Order Filters}
+\input{ch_passiveFilters/frequencyResponse}
+\section{Two-element Filters}
+\input{ch_passiveFilters/firstOrder}
 \section{Second Order Filters}
+\input{ch_passiveFilters/secondOrder}
 
 % --------------------------------------------------------------------
 \chapter{Active Filters}
 \section{Op-Amps in AC}
+\input{ch_activeFilters/ompAmpsAC}
 \section{First Order Filters}
+\input{ch_activeFilters/firstOrder}
 \section{Second Order Filters}
+\input{ch_activeFilters/secondOrder}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{Analysis of Circuit Networks}

@@ -1,0 +1,44 @@
+\begin{itemize}
+\item Complex numbers builds on our understanding of vectors
+\item If all real numbers can be plotted on a number line, we can draw another number line orthogonal\footnote{perpendicular} to the first to represent imaginary numbers.  A complex number is a point within the plane we created.
+\item Complex numbers can be represented in two ways: Cartesian form and polar form
+  \begin{itemize}
+  \item In Cartesian form, the real and imaginary parts are simply added together, with the imaginary part multiplied with $j$, which is the Circuits name for $\sqrt{\-1}$.  For instance, $1 + j2$ would be a number which is one unit to the right on the Real number line, and two units up on the imaginary number line.
+  \item In polar form, a line connecting the point to the origin is defined, and the point is then described using the length of that line and the angle it makes with the Real number line.  $1 + j2$ would have a length of $\sqrt{5}$ and an angle of about 63 degrees or 1.1 rad.  This is commonly represented as $\sqrt{5}e^{j1.1}$ or just $\sqrt{5}\angle{1.1}$
+  \item If a number $C$ can be described as $C=x+jy$, it can be converted to polar coordinates ($C=A\angle \theta$) through the following formulas:
+    \begin{itemize}
+    \item $A = \sqrt{x^2+y^2}$
+    \item $\theta = \tan^{-1}\frac{y}{x}$
+    \end{itemize}
+  \item Likewise, the number can be converted back using these formulas:
+    \begin{itemize}
+    \item $x = A\cos \theta$
+    \item $y = A\sin \theta$
+    \end{itemize}
+  \end{itemize}
+\item Addition is only feasible in Cartesian coordinates.  If you need to add two imaginary numbers in polar form, you should convert both to Cartesian first.
+  \begin{itemize}
+  \item Take two complex numbers in Cartesian form: $C_1=x_1+jy_1$ and
+    $C_2=x_2+jy_2$
+  \item The sum of those two numbers is defined as
+    $C_1+C_2=(x_1+x_2)+j(y_1+y_2)$
+  \item To subtract $C_2$ from the $C_1$, simply negate both $x_2$ and $y_2$:
+    $C_1-C_2=(x_1-x_2)+j(y_1-y_2)$
+  \end{itemize}
+\item Multiplication is feasible in either Cartesian or polar coordinates
+  \begin{itemize}
+  \item Take two complex numbers in Cartesian form: $C_1=x_1+jy_1$ and
+    $C_2=x_2+jy_2$
+  \item The product of those two can be written through the FOIL (First, Outer, Inner, Last) method: $C_1\cdot C_2 = x_1x_2 + jx_1y_2 + jx_2y_1 + j^2y_1y_2$
+  \item Recognize that $j^2=-1$:
+    $C_1\cdot C_2 = x_1x_2 + jx_1y_2 + jx_2y_1 - y_1y_2$
+  \item Alternatively, if you have two complex numbers in polar form: $C_1=A_1\angle\theta_1$ and $C_2=A_2\angle\theta_2$
+  \item The new amplitude is simply the product of the original amplitudes, and the new angle is the sum of the original angles:
+    $C_1\cdot C_2 = C_1C_2\angle(\theta_1+\theta_2)$
+  \end{itemize}
+\item Division is possible in Cartesian coordinates, but difficult enough that it is much easier to simply convert to polar
+  \begin{itemize}
+  \item Take two numbers in polar form: $C_1=A_1\angle\theta_1$ and $C_2=A_2\angle\theta_2$
+  \item The new amplitude is the result of the division of the original amplitudes, and the new angle is the result of subtraction of the original amplitudes: $C_1/C_2 = A_1/A_2 \angle(\theta_1 - \theta_2)$
+  \end{itemize}
+\end{itemize}
