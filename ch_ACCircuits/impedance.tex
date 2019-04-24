@@ -1,5 +1,6 @@
 
 \begin{itemize}
+\item Ohm's Law works in AC exactly like it does in DC, just replace $R$ with $Z$: $\Delta V$ = $I Z$
 \item Impedances of each component summarized in
   Table \ref{tab:impedanceSummary}
 \item Equivalent impedance evaluated exactly as equivalent resistance:
@@ -9,6 +10,24 @@
   \item $C_{parallel}=C_1+C_2$, $C_{series} = \frac{C_1\cdot C_2}{C_1+C_2}$
   \item $L_{series} = L_1+L_2$, $L_{parallel} = \frac{L_1\cdot L_2}{L_1+L_2}$
   \end{itemize}
-\item Ohm's Law works in AC exactly like it does in DC, just replace $R$ with $Z$: $\Delta V$ = $I Z$
 \end{itemize}
 \input{ch_ACCircuits/impedance_table}
+
+%% Examples
+\begin{itemize}
+\item Simple RL circuit (series)
+  \begin{itemize}
+  \item $V = 10 \cos (500 t + \pi / 4)$ V
+  \item $R = 100 \Omega$
+  \item $L = 50 mH$
+  \item Find I
+  \end{itemize}
+\item Simple RLC circuit (RL parallel, C series)
+  \begin{itemize}
+  \item $I = 40 \cos (2400 t)$ mA
+  \item $R = 1000 \Omega$
+  \item $L = 100 mH$
+  \item $C = 15 \mu F$
+  \item Find V
+  \end{itemize}
+\end{itemize}

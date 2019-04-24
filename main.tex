@@ -9,6 +9,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[bottom]{footmisc}
+\usepackage{circuitikz}
 \usepackage{ctable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
@@ -139,8 +140,14 @@
 \input{ch_eqCircuits/series}
 \section{Resistors in Parallel}
 \input{ch_eqCircuits/parallel}
-\section{Reorganizing Complicated Circuits}
-\input{ch_eqCircuits/complicated}
+
+%% I'm in favor of omitting this section in favor of emphasizing the
+%%  definitions of parallel and series
+%\section{Reorganizing Complicated Circuits}
+%\input{ch_eqCircuits/complicated}
+
+\section{Wye-Delta Transform}
+\input{ch_eqCircuits/wyeDelta}
 \section{Using Voltage Division}
 \input{ch_eqCircuits/voltageDivision}
 \section{Using Current Division}
@@ -153,13 +160,15 @@
 % --------------------------------------------------------------------
 \chapter{Extra Uses for Voltage Dividers}
 \section{Maximum Power Transfer}
+\input{ch_voltageDividers/maxPower}
 \section{Nonlinear Circuit Elements}
 \section{Incorporating Computation - Graphical Analysis}
 % --------------------------------------------------------------------
 \chapter{Operational Amplifiers}
 \section{What is an Op-Amp?}
-
+\input{ch_opAmps/opAmp}
 \section{Golden Rules}
+\input{ch_opAmps/goldenRules}
 
 \section{Analyzing Circuits with Op-Amps}
 
@@ -178,24 +187,35 @@
 \input{ch_ACCircuits/inductors}
 \section{Equivalent Impedance and Ohm's Law}
 \input{ch_ACCircuits/impedance}
+% --------------------------------------------------------------------
+\chapter{AC Power}
 \section{Watt's Law for AC}
-\input{ch_ACCircuits/ACwatt}
-\subsection*{Maximum Power for AC Circuits}
-%\input{ch_ACCircuits/ACmaxpower}
-\subsection*{Impedance Matching}
-%\input{ch_ACCircuits/impedancematching}
-
+\input{ch_ACPower/ACwatt}
+\section{Average Power}
+\input{ch_ACPower/averagePower}
+\section{Complex Power}
+\input{ch_ACPower/complexPower}
+\section{Power Factor Correction}
+\input{ch_ACPower/powerFactorCorrection}
+\section{Maximum Power for AC Circuits}
+\input{ch_ACPower/ACmaxPower}
 % --------------------------------------------------------------------
 \chapter{Passive Filters}
 \section{Frequency Response}
-\section{First Order Filters}
+\input{ch_passiveFilters/frequencyResponse}
+\section{Two-element Filters}
+\input{ch_passiveFilters/firstOrder}
 \section{Second Order Filters}
+\input{ch_passiveFilters/secondOrder}
 
 % --------------------------------------------------------------------
 \chapter{Active Filters}
 \section{Op-Amps in AC}
+\input{ch_activeFilters/ompAmpsAC}
 \section{First Order Filters}
+\input{ch_activeFilters/firstOrder}
 \section{Second Order Filters}
+\input{ch_activeFilters/secondOrder}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{Analysis of Circuit Networks}
