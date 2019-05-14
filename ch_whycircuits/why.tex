@@ -1,0 +1,11 @@
+Why do we have electric circuits? This is not a philosophical question but a practical one. Circuits tend to serve one of two purposes: they either power devices (like lights, motors, heaters, etc.) or they condition \textit{signals} (i.e., information of some kind, which in the context of circuits will be encoded in voltage or current). Any electrical or electronic gadget you can think of will do at least one of these two things if not both. Here is a schematic diagram of one of the simplest circuits:
+%insert battery resistor LED schematic
+\begin{center}
+\begin{circuitikz}
+\draw(0,4) to[battery, t=+] (0,0);
+\draw (0,4) to[] (2,4) to[R] (2,2) to[leDo] (2,0) to[] (0,0){}; 
+
+\end{circuitikz} 
+\end{center}
+
+This circuit includes a battery, a \textit{resistor}, and a light-emitting diode (LED). Although this circuit may look unfamiliar in schematic form, you have certainly encountered circuits like this in your everyday life, because LEDs are everywhere. This circuit is designed to power (and thus light up) the LED. Let's 
