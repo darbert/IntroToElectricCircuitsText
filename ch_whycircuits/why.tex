@@ -5,19 +5,28 @@ Why do we have electric circuits? This is not a philosophical question but a pra
 \begin{center}
 \begin{circuitikz}
 
-\draw(0,4) to[battery, t=+] (0,0);
+\draw(0,4) to[battery, l^=+] (0,0);
 \draw (0,4) to[] (2,4) to[R] (2,2) to[leDo] (2,0) to[] (0,0){}; 
 
 \end{circuitikz}
 \caption{A simple circuit with a battery, a resistor, and an LED.}
 \label{simpleCircuit}
 \end{center}
-\end{figure} 
+\end{figure}
 
 
 This circuit includes a battery, a \textit{resistor} (the zig-zagged lines), and a light-emitting diode (LED). Although this circuit may look unfamiliar in schematic form, you have certainly encountered circuits like this in your everyday life, because LEDs are everywhere. This circuit is designed to power (and thus light up) the LED. Let's spend some time discussing the properties of this circuit.
 \par
-First, let's assume the battery, which is represented as four parallel lines, is a standard 9V. That means there is a 9 volt difference in potential energy per unit charge between the positive terminal of the battery and the negative terminal. This electric potential difference will cause electrons to move through the circuit from the negative terminal to the positive terminal. The flow of electrons between these terminals is known as \textit{current}, which is expressed in Amperes, amps, or just 'A'. This flow of charge is affected by everything in the circuit between the battery terminals---in this case, the resistor and the LED. Also, the current flowing through a single \textit{branch} has a constant value at all points along that branch. In other words, the current flowing out of the positive terminal of the battery into the resistor has the same value as the current that flows out of the resistor and into the LED, which has the same value as the current that flows out of the LED and into the negative battery terminal. 
+First, let's assume the battery, which is represented as four parallel lines, is a standard 9V. That means there is a 9 volt difference in potential energy per unit charge between the positive terminal of the battery and the negative terminal. This electric potential difference will cause electrons to move through the circuit from the negative terminal to the positive terminal. The flow of charge between these terminals is known as \textit{current}, which is expressed in Amperes, amps, or just 'A'. This current is affected by everything in the circuit between the battery terminals---in this case, the resistor and the LED. Also, the current flowing through a single \textit{branch} has a constant value at all points along that branch. In other words, the current flowing out of the positive terminal of the battery into the resistor has the same value as the current that flows out of the resistor and into the LED, which has the same value as the current that flows out of the LED and into the negative battery terminal. Instead of diving in to the physics of semiconductors, let's just assume that the LED has a constant 1.5V difference between its terminals as long as current flows in the direction of the arrow of its schematic symbol. Let's also put a few labels on the diagram to make things a little more clear:
+%battery resistor LED with annotations
+\begin{figure}[h!]
+\begin{center}
+\begin{circuitikz}
 
-
-Instead of diving in to the physics of semiconductors, let's just assume that the diode has a constant 1.5V difference between its terminals as long as current flows in the direction of the arrow of its schematic symbol. 
+\draw(0,4) to[battery, l=9V yshift=0.5cm] (0,0);
+\draw(0,4) to[] (2,4) to[R, l=R] (2,2) to[leDo, l=1.5V] (2,0) to[] (0,0){};
+\end{circuitikz}
+\caption{A simple circuit with a battery, a resistor, and an LED.}
+\label{simpleCircuit}
+\end{center}
+\end{figure}
